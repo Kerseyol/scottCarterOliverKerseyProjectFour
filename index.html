@@ -11,14 +11,27 @@
     <h1>No really, testing the API</h1>
 
     
-    <button>panther</button>
-    <button>dogs</button>
-    <button>baseball</button>
-    <button>farts</button>
-    <button>ai</button>
-    <button>poop</button>
+    <input type="checkbox" value="happy" name="happy">happy</input>
+    <input type="checkbox" value="sad" name="sad">sad</input>
+    <input type="checkbox" value="excited" name="excited">excited</input>
+    <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
+    <input type="checkbox" value="gloomy" name="gloomy">gloomy</input>
+    <input type="checkbox" value="humorous" name="humorous">humorous</input>
+    <input type="checkbox" value="melancholy" name="melancholy">melancholy</input>
+    <input type="checkbox" value="whimsical" name="whimsical">whimsical</input>
+    <input type="checkbox" value="romantic" name="romantic">romantic</input>
+    <input type="checkbox" value="mysterious" name="mysterious">mysterious</input>
+    <input type="checkbox" value="ominous" name="ominous">ominous</input>  
+    <input type="checkbox" value="calm" name="calm">calm</input>
+    <input type="checkbox" value="lighthearted" name="lighthearted">lighthearted</input>
+    <input type="checkbox" value="hopeful" name="hopeful">hopeful</input>
+    <input type="checkbox" value="fearful" name="fearful">fearful</input>
+    <input type="checkbox" value="tense" name="tense">tense</input>
+    <input type="checkbox" value="lonely" name="lonely">lonely</input>
     
-    <div class="gifContainer" style="width: 100%; height: 30%; display: flex;"></div>
+    <div class="gifContainer" style="width: 400px; height: 400px; display: flex;">
+        <div style="width:100%;height:0;padding-bottom:44%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="400px" height="400px" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    </div>
     
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
 
@@ -26,30 +39,62 @@
 
         $(function(){
 
-            // const generate = function(query){
-            $('button').on('click', function(event){
+            //button on click function event
 
-                const button = event.target.innerText;
+            const button = {};
+
+            // $('button').one('click', function(event){
+            //     button.first = event.target.innerText
+            // })
+
+            // const generate = function(query){
+            $('checkbox').one('click', function(event){
+
+                button.first = event.target.innerText
+                                // second: event.target.innerText
+                })
+
+                const button2 = {};
                 console.log(button);
 
+                $('.gifContainer').empty();
+                // event.target.innerText;
+                
 
                 $.ajax({
-                    url:'https://api.giphy.com/v1/gifs/translate',
+                    url:'https://api.giphy.com/v1/gifs/random',
                     method: 'GET',
                     dataType: 'json',
                     data: {
                         api_key: 'uOoh1YcEJMW5RZkHeRFcIl5PkkMudbnv',
-                        s: button
+                        tag: button.first
                     }
                     }).then(function(e) {
                     const embedUrl = e.data.embed_url;
-                    const url = e.data.url;
+                    // const url = e.data.url;
 
-                    $('.gifContainer').append(`<div style="width:100%;height:100%;padding-bottom:68%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${url}">via GIPHY</a></p>`)
+
+//Append may still be used, but we have to clear the gifs  COMPLETED
+
+//We need to fit the gif to container, remove black bars, additional PARTIALLY COMPLETE
+
+//possibly put div on top of bars to remove visibility
+
+//default image of eyeball as default monitor image COMPLETED
+
+//look up embed stylings COMPLETED
+
+//stretch goal: get rid of hover feature if possible
+
+//add combination tags - keep the buttons
+
+                    $('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`);
                 });
+                // <p><a href="${url}">via GIPHY</a></p>
+                // allowFullScreen
             })    
         // }
-        })
+        
 
     </script>
     
