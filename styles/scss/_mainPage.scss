@@ -1,0 +1,28 @@
+
+.checkboxContainer {
+    height: 30vh;
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    margin: 20px;
+}
+
+.checkbox > input {
+    appearance: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: $primaryColor;
+}
+
+.checkbox > input:checked {
+    background-color: $accentColor1;
+}
