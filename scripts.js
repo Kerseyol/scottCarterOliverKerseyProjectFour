@@ -29,24 +29,25 @@
                         const url = e.data.url;
                         $('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`)
                     })
+                    audTag[2].currentTime = 0;
                     audTag[2].play();
                     
                     setTimeout(switchReturn, 8000);
                 }
                 
-                $(document).ready(function(){
+                // $(document).ready(function(){
                     
-                    $(".checkbox").change(function(){
+                //     $(".checkbox").change(function(){
 
-                    });
+                //     });
                 
-                });
+                // });
                 
-                function grabText() {
-                    const finalSelection = document.getElementById("letsTryIt").innerText;
-                    finalSelection.primaryMood = document.getElementById("checkbox").innerHTML;
-                    console.log(finalSelection);  
-                  }
+                // function grabText() {
+                //     const finalSelection = document.getElementById("letsTryIt").innerText;
+                //     finalSelection.primaryMood = document.getElementById("checkbox").innerHTML;
+                //     console.log(finalSelection);  
+                //   }
 
                 //   $("label.checkbox").change(function() {
                 //       if(this.checked) {
@@ -63,16 +64,16 @@
                 //   })
 
                 $("input[name='happy']").change(function() {
-                    grabText();
+                   
                     if(this.checked) {
                         audTag[1].currentTime = 0;
                         audTag[1].play();
                         finalSelection.primaryMood = 'happy';              
                     } else if (!this.checked) {
-                    audTag[1].currentTime = 0
-                    audTag[1].play();
-                    delete finalSelection.primaryMood;
-                }                    
+                        audTag[1].currentTime = 0
+                        audTag[1].play();
+                        delete finalSelection.primaryMood;
+                    }                 
                 console.log(finalSelection);
             }),
             
@@ -99,14 +100,22 @@
                 $('.gifContainer').empty(),
                 ($('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
                 const audTag = document.getElementsByTagName("audio");
-                audTag[0].play();                          
+                audTag[0].play();
+                resetNoExtraSound()                          
                     };
             
             reset = function(){
+                audTag[3].currentTime = 0;
                 audTag[3].play();
                 $('input[type=checkbox]').each(function() { 
             this.checked = false; 
             }); 
+        }
+            resetNoExtraSound = function(){
+                $('input[type=checkbox]').each(function() { 
+            this.checked = false; 
+            }); 
+
         }
             // const audTag = document.getElementsByTagName("audio");
             //     $(activate).on("click", function (event) {
