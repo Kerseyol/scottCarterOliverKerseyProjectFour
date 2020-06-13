@@ -146,4 +146,8 @@
 
 //add combination tags - keep the buttons
 
-
+                
+                // <p><a href="${url}">via GIPHY</a></p>
+                // allowFullScreen
+        
+        
