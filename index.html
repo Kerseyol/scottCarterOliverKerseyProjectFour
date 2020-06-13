@@ -17,7 +17,7 @@
 
     <main class="wrapper">
 
-        <div class="gifContainer" style="width: 250px; height: 250px; display: flex;">
+        <div class="gifContainer" style="width: 400px; height: 400px; display: flex;">
             <div style="width:100%;height:0;padding-bottom:44%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="400px" height="400px" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
         </div>
 
@@ -33,12 +33,12 @@
             </label>
         
             <label for="excited" class="checkbox">
-                <input type="checkbox" value="excited" name="excited">excited</input>
+                <input type="checkbox" value="excited" name="excited" id="letsTryIt">excited</input>
         
             </label>
         
-            <label for="cheerful" class="checkbox">
-                <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
+            <label for="cheerful" class="checkbox" id="checkbox">
+                <input type="checkbox" value="cheerful" name="cheerful" id="letsTryIt">cheerful</input>
             </label>
         
             <label for="gloomy" class="checkbox">
@@ -93,12 +93,16 @@
                 <input type="checkbox" value="lonely" name="lonely">lonely</input>
             </label>
         </div>
-        
+        <button class="button"><p>Activate</p></button>
+        <button class="resetButton"><p>Reset</p></button>
         <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     </main>
 
 
     <script src="scripts.js"></script>
-    
+    <audio src="./assets/bzzz.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
+    <audio src="./assets/click.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
+    <audio src="./assets/synthSting.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
+    <audio src="/assets/" class="audio" preload="auto" type="audio/mpeg"></audio>
 </body>
-</html>
+</html> 
