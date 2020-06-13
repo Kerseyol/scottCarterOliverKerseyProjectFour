@@ -1,4 +1,10 @@
 
+body {
+    background-image: url(../assets/penfield.jpg);
+    background-size: fill;
+    background-position: 0px 0px;
+}
+
 .checkboxContainer {
     height: 30vh;
     width: 65%;
@@ -17,12 +23,16 @@
 
 .checkbox > input {
     appearance: none;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    background-color: $primaryColor;
+    background: url(../assets/dials.jpg);
+    background-size: cover;
+    transition: all 1s;
 }
 
 .checkbox > input:checked {
-    background-color: $accentColor1;
+    transform: rotate(120deg);
 }
+
+//scott edit

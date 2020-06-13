@@ -250,6 +250,12 @@ h1 {
   font-size: 6rem;
 }
 
+body {
+  background-image: url(../assets/penfield.jpg);
+  background-size: fill;
+  background-position: 0px 0px;
+}
+
 .checkboxContainer {
   height: 30vh;
   width: 65%;
@@ -270,6 +276,9 @@ h1 {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   margin: 20px;
 }
@@ -278,12 +287,16 @@ h1 {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
-  background-color: #141301;
+  background: url(../assets/dials.jpg);
+  background-size: cover;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .checkbox > input:checked {
-  background-color: #EC9A29;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
 }
