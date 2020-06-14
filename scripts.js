@@ -7,27 +7,29 @@ const finalSelection = {
 }
 let clicks = 0;
 
+const audTag = document.getElementsByTagName("audio");
+
 moodApp.checkboxValue = function (){
     $('input[type=checkbox]').on('click', function(){
         
         if (clicks === 0){
             if(this.checked) {
-                // audTag[1].currentTime = 0;
-                // audTag[1].play();
+                audTag[1].currentTime = 0;
+                audTag[1].play();
                 finalSelection.primaryMood = this.value;             
             } else if (!this.checked) {
-                // audTag[1].currentTime = 0
-                // audTag[1].play();
+                audTag[1].currentTime = 0
+                audTag[1].play();
                 delete finalSelection.primaryMood;
             }
         } else {
             if(this.checked) {
-                // audTag[1].currentTime = 0;
-                // audTag[1].play();
+                audTag[1].currentTime = 0;
+                audTag[1].play();
                 finalSelection.secondaryMood = this.value;             
             } else if (!this.checked) {
-                // audTag[1].currentTime = 0
-                // audTag[1].play();
+                audTag[1].currentTime = 0
+                audTag[1].play();
                 delete finalSelection.secondaryMood;
             }
         }
@@ -50,7 +52,7 @@ moodApp.activate = function (){
                 const embedUrl = e.data.embed_url;
                 $('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`)
         })
-        // audTag[2].play();
+        audTag[2].play();
         
         setTimeout(moodApp.switchReturn, 8000);
         })
@@ -61,13 +63,13 @@ moodApp.switchReturn = function(){
     $('.gifContainer').empty(),
     ($('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
     
-    const audTag = document.getElementsByTagName("audio");
-    // audTag[0].play(); 
+   
+    audTag[0].play(); 
 }
 
 moodApp.reset = function(){
     $('.resetButton').on('click', function(){
-        // audTag[3].play();
+        audTag[3].play();
         $('input[type=checkbox]').each(function() { 
         this.checked = false; 
         finalSelection.primaryMood = '';
