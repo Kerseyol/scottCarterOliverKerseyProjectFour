@@ -85,8 +85,17 @@ moodApp.switchReturn = function(){
     $('.gifContainer').empty(),
     ($('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
 
-    moodApp.reset();
+    $('.happyMoods').addClass('hidden');
+    $('.sadMoods').addClass('hidden');
+    $('.happy').removeAttr("disabled");
+    $('.sad').removeAttr("disabled");
+    $('input[type=checkbox]').each(function() { 
+        this.checked = false; 
+        finalSelection.primaryMood = '';
+        finalSelection.secondaryMood = '';
+    }); 
     
+   
     audTag[0].play(); 
 }
 
