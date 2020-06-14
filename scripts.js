@@ -1,4 +1,3 @@
-
 const moodApp = {};
 
 const finalSelection = {
@@ -10,9 +9,27 @@ let clicks = 0;
 const audTag = document.getElementsByTagName("audio");
 
 moodApp.checkboxValue = function (){
-    $('input[type=checkbox]').on('click', function(){
-        
-        if (clicks === 0){
+    $('input[type=checkbox]').on('click', function(e){
+        if (e.target.className === 'happy') {
+            $('.happyMoods').toggleClass('hidden');
+        } else if (e.target.className === 'sad'){
+            $('.sadMoods').toggleClass('hidden');
+            
+        }
+
+        if ($('.happyMoods').css('display') == 'none' && $('.sadMoods').css('display') == 'none'){
+            $('.sad').attr("disabled", false);
+            $('.happy').attr("disabled", false);
+        }   else if ($('.happyMoods').css('display') == 'none') {
+            $('.happy').attr("disabled", true);
+            $('.sad').attr("disabled", false);
+        } else if ($('.sadMoods').css('display') == 'none'){
+            $('.happy').attr("disabled", false);
+            $('.sad').attr("disabled", true);
+        }
+
+
+        if (clicks === 1){
             if(this.checked) {
                 audTag[1].currentTime = 0;
                 audTag[1].play();
@@ -22,7 +39,7 @@ moodApp.checkboxValue = function (){
                 audTag[1].play();
                 delete finalSelection.primaryMood;
             }
-        } else {
+        } else if (clicks > 1) {
             if(this.checked) {
                 audTag[1].currentTime = 0;
                 audTag[1].play();
@@ -32,14 +49,18 @@ moodApp.checkboxValue = function (){
                 audTag[1].play();
                 delete finalSelection.secondaryMood;
             }
+        }   else {
+            audTag[1].currentTime = 0;
+            audTag[1].play();
         }
         clicks++;
     })
 }
 
 moodApp.activate = function (){
-    $('.button').on('click', function(){
+    $('.organKey').on('click', function(){
         $('.gifContainer').empty();
+        $('.organKey').attr("disabled", true);
         $.ajax({
             url:'https://api.giphy.com/v1/gifs/random',
             method: 'GET',
@@ -54,7 +75,8 @@ moodApp.activate = function (){
         })
         audTag[2].play();
         
-        setTimeout(moodApp.switchReturn, 8000);
+        setTimeout(moodApp.switchReturn, 5000);
+        setTimeout( function(){$('.organKey').attr("disabled", false);}, 5000);
         })
         
     }
@@ -62,28 +84,36 @@ moodApp.activate = function (){
 moodApp.switchReturn = function(){
     $('.gifContainer').empty(),
     ($('.gifContainer').append(`<div style="width:400px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
+
+    moodApp.reset();
     
-   
     audTag[0].play(); 
 }
 
 moodApp.reset = function(){
-    $('.resetButton').on('click', function(){
-        audTag[3].play();
-        $('input[type=checkbox]').each(function() { 
+    $('.happyMoods').addClass('hidden');
+    $('.sadMoods').addClass('hidden');
+    $('.happy').removeAttr("disabled");
+    $('.sad').removeAttr("disabled");
+    $('input[type=checkbox]').each(function() { 
         this.checked = false; 
         finalSelection.primaryMood = '';
-        }); 
+        finalSelection.secondaryMood = '';
+    }); 
+}
+
+moodApp.resetButton = function(){
+    $('.resetButton').on('click', function(){
+        audTag[3].play();
+        moodApp.reset();
     })
 }   
-
-
 
 moodApp.init = () => {
     moodApp.checkboxValue();
     moodApp.activate();
     moodApp.switchReturn();
-    moodApp.reset();
+    moodApp.resetButton();
 }
 
 $(function(){

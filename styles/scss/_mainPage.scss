@@ -1,15 +1,40 @@
 
 body {
-    background-image: url(../assets/penfield.jpg);
-    background-size: fill;
-    background-position: 0px 0px;
+    // background-image: url(../assets/penfield.jpg);
+    // background-size: fill;
+    // background-position: 0px 0px;
+    background-image: url(../assets/bladerunnerBackground.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body h1 {
+    margin-left: 30px;
+    color: $accentColor1;
+}
+
+main {
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+}
+
+.monitorAndMixer {
+    display: flex;
+    padding-bottom: 3%;
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
 }
 
 .checkboxContainer {
-    height: 30vh;
-    width: 65%;
+    background-image: url(.././assets/mixerBack.jpg);
+    height: 460px;
+    width: 55%;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    border-radius: 5px;
 }
 
 .checkbox {
@@ -19,6 +44,8 @@ body {
     align-items: center;
     position: relative;
     margin: 20px;
+    font-size: 20px;
+    color: $accentColor1;
 }
 
 .checkbox > input {
@@ -33,10 +60,4 @@ body {
 
 .checkbox > input:checked {
     transform: rotate(120deg);
-<<<<<<< HEAD
 }
-=======
-}
-
-//scott edit
->>>>>>> master
