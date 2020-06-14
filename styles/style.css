@@ -235,12 +235,129 @@ html {
   overflow: hidden;
 }
 
+.gifContainer {
+  margin: auto;
+  outline: 30px solid #07004D;
+  background: black;
+}
+
+.keyboard-container {
+  width: auto;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url(../assets/graphite.jpg);
+  background-repeat: repeat;
+}
+
+.accidentals-container {
+  width: 526px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[42];
+      grid-template-columns: repeat(42, 1fr);
+  height: 66%;
+  justify-items: center;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+.accidentals-container button {
+  width: 45px;
+  background: #141301;
+  border: 1px solid #878E88;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  top: -299px;
+  position: relative;
+  z-index: 1;
+  border-top: none;
+}
+
+.accidentals-container button.C {
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-column: 6 / span 2;
+}
+
+.accidentals-container button.D {
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 3;
+  grid-column: 12 / span 3;
+}
+
+.accidentals-container button.F {
+  -ms-grid-column: 25;
+  -ms-grid-column-span: 2;
+  grid-column: 25 / span 2;
+}
+
+.accidentals-container button.G {
+  -ms-grid-column: 31;
+  -ms-grid-column-span: 2;
+  grid-column: 31 / span 2;
+}
+
+.accidentals-container button.A {
+  -ms-grid-column: 37;
+  -ms-grid-column-span: 1;
+  grid-column: 37 / span 1;
+}
+
+.naturals-container {
+  width: 526px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  height: 300px;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+.naturals-container button {
+  background: #878E88;
+  border: 1px solid #141301;
+  border-radius: 0 0 6px 6px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active, button:focus {
+  border: 0;
+  outline: rgba(225, 225, 225, 0);
+}
+
+.naturals-container p {
+  font-size: 1.75em;
+  top: 100px;
+  position: relative;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9), 0 -1px 1px rgba(0, 0, 0, 0.1);
+  color: #1b1b1e;
+}
+
+.resetButton {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  margin: 25px;
+  background-color: #A3320B;
+  border: 2px solid #EC9A29;
+}
+
+.resetButton:active,
+.resetButton:focus {
+  background-color: #A3320B;
+  border: 1px solid #EC9A29;
+}
+
 html {
   font-size: 62.5%;
 }
 
 .wrapper {
-  max-width: 1300px;
+  max-width: 1600px;
   width: 90%;
   margin: 0 auto;
 }
@@ -251,19 +368,43 @@ h1 {
 }
 
 body {
-  background-image: url(../assets/penfield.jpg);
-  background-size: fill;
-  background-position: 0px 0px;
+  background-image: url(../assets/bladerunnerBackground.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body h1 {
+  margin-left: 30px;
+  color: #EC9A29;
+}
+
+main {
+  background-image: url(../assets/graphite.jpg);
+  background-repeat: repeat;
+}
+
+.monitorAndMixer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 3%;
+  background-image: url(../assets/graphite.jpg);
+  background-repeat: repeat;
 }
 
 .checkboxContainer {
-  height: 30vh;
-  width: 65%;
+  background-image: url(.././assets/mixerBack.jpg);
+  height: 460px;
+  width: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: auto;
+  border-radius: 5px;
 }
 
 .checkbox {
@@ -281,6 +422,8 @@ body {
           align-items: center;
   position: relative;
   margin: 20px;
+  font-size: 20px;
+  color: #EC9A29;
 }
 
 .checkbox > input {

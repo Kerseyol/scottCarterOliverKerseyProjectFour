@@ -1,0 +1,104 @@
+//Credit to the https://codepen.io/clkent/pen/dQwGqj
+//Piano key project by Chelsea Kent, for our use of the keyboard template
+.gifContainer {
+    margin: auto;
+    outline: 30px solid $secondaryColor;
+    background: black;
+}
+
+.keyboard-container {
+    width: auto;
+    height: 300px;
+    margin: 0 auto;
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+  }
+  
+  .accidentals-container {
+    width: 526px;
+    display: grid;
+    grid-template-columns: repeat(42, 1fr);
+      height: 66%;
+    justify-items: center;
+    margin: auto;
+    padding-bottom: 2%;
+  }
+  
+  .accidentals-container button {
+    width: 45px;
+      background: $primaryColor;
+      border: 1px solid $accentColor2;
+      border-radius: 0 0 4px 4px;
+      cursor: pointer;
+      top: -299px;
+      position: relative;
+      z-index: 1;
+      border-top: none;
+  }
+  
+  
+  .accidentals-container button.C {
+    grid-column: 6 / span 2;
+  }
+  
+  .accidentals-container button.D {
+    grid-column: 12 / span 3;
+  }
+  
+  .accidentals-container button.F {
+    grid-column: 25 / span 2;
+  }
+  
+  .accidentals-container button.G {
+    grid-column: 31 / span 2;
+  }
+  
+  .accidentals-container button.A {
+    grid-column: 37 / span 1;
+  }
+  
+  
+  .naturals-container {
+    width: 526px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 300px;
+    margin: auto;
+    padding-bottom: 2%;
+  }
+  
+  .naturals-container button {
+    background: $accentColor2;
+    border: 1px solid $primaryColor;
+    border-radius: 0 0 6px 6px;
+  }
+  
+  button {
+        cursor: pointer;
+  }
+  
+  button:active, button:focus {
+      border: 0;
+      outline: rgba(225, 225, 225, 0);
+    }
+  
+  .naturals-container p {
+    font-size: 1.75em;
+        top: 100px;
+      position: relative;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .9), 0 -1px 1px rgba(0, 0, 0, .1);
+    color: #1b1b1e;
+  }
+
+  .resetButton {
+      align-self: end;
+      margin: 25px;
+      background-color: $bonusAccentColor;
+      border: 2px solid $accentColor1;
+  }
+
+  .resetButton:active,
+  .resetButton:focus {
+      background-color: $bonusAccentColor;
+      border: 1px solid $accentColor1;
+  }
