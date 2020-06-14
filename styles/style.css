@@ -367,6 +367,10 @@ h1 {
   font-size: 6rem;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   background-image: url(../assets/bladerunnerBackground.gif);
   background-repeat: no-repeat;
