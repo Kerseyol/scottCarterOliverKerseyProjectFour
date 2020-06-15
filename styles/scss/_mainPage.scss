@@ -8,8 +8,9 @@ body {
 }
 
 body h1 {
-    margin-left: 30px;
+    text-align: center;
     color: $accentColor1;
+    padding: 15px 0;
 }
 
 main {
@@ -27,7 +28,7 @@ main {
 
 .checkboxContainer {
     background-image: url(.././assets/mixerBack.jpg);
-    height: 460px;
+    height: 402px;
     width: 301px;
     margin-right: 2%;
     display: flex;
@@ -35,9 +36,10 @@ main {
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    margin-top: -35px;
+    margin-top: -6px;
     margin-left: 15px;
     padding-bottom: 0;
+    outline: 15px solid black;
 }
 
 .checkbox {
@@ -63,25 +65,47 @@ main {
 
 .checkbox > input:checked {
     transform: rotate(120deg);
-
-
 }
 
 .monitorAndMixer {
     margin-bottom: -44px;
-  }
+}
   
-
-  .wrapper {
+.wrapper {
     width: 75%;
-  }
+}
   
-  .gifContainer {
+.gifContainer {
     margin-top: -5px;
-  }
+}
   
-  .wrapper {
+.wrapper {
     max-width: 1600px;
     width: 700px;
     margin: 0 auto;
+}
+
+.instructions {
+    background-image: url(../assets/graphite.jpg);
+    margin-top: 38px;
+}
+
+.instructions p {
+    background-image: url(../assets/mixerBack.jpg);
+    font-family: $primaryFont;
+    border: 15px solid black;
+    font-size: 18px;
+    color: $accentColor1;
+    width: 661px;
+    margin: 0 auto;
+}
+
+.credits p {
+    font-size: 14px;
+    color: $accentColor1;
+    text-align: center;
+    background-image: url(../assets/graphite.jpg);
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 10px;
 }

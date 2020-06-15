@@ -3,124 +3,123 @@
 .gifContainer {
     margin: 0;
     margin-right: 15px;
-    margin-left: 30px;
     padding: 0;
     margin-top: -5px;
-    outline: 30px solid $secondaryColor;
+    outline: 15px solid $accentColor1;
     background: black;
 }
 
 .baseMoods {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .extraFunContainer {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 30px;
-  padding-left: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    padding-left: 5px;
 }
 
 .extraSadContainer {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 30px;
-  padding-left: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    padding-left: 5px;
 }
 
 .keyboardContainer {
-  height: 325px;
-  background-image: url(../assets/graphite.jpg);
-  background-repeat: repeat;
-  margin-top: 21px;
+    height: 242px;
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+    margin-top: 21px;
+    padding-top: 15px;
 }
   
-  .accidentalsContainer {
-    width: 526px;
+.accidentalsContainer {
+    width: 446px;
     display: grid;
     grid-template-columns: repeat(42, 1fr);
-      height: 60%;
+      height: 50%;
     justify-items: center;
     padding-bottom: 2%;   
     margin: 0 auto;
-  }
+    margin-top: 100px;
+}
   
-  .accidentalsContainer button {
+.accidentalsContainer button {
     width: 45px;
-      background: $primaryColor;
-      border: 1px solid $accentColor2;
-      border-radius: 0 0 4px 4px;
-      cursor: pointer;
-      top: -299px;
-      position: relative;
-      z-index: 1;
-      border-top: none;
-  }
+    background: $primaryColor;
+    border: 1px solid $accentColor1;
+    border-radius: 0 0 4px 4px;
+    cursor: pointer;
+    top: -299px;
+    position: relative;
+    z-index: 1;
+    border-top: none;
+}
   
-  
-  .accidentalsContainer button.C {
+.accidentalsContainer button.C {
     grid-column: 6 / span 2;
-  }
+}
   
-  .accidentalsContainer button.D {
+.accidentalsContainer button.D {
     grid-column: 12 / span 3;
-  }
+}
   
-  .accidentalsContainer button.F {
-    grid-column: 25 / span 2;
-  }
+.accidentalsContainer button.F {
+    grid-column: 26 / span 2;
+}
   
-  .accidentalsContainer button.G {
-    grid-column: 31 / span 2;
-  }
+.accidentalsContainer button.G {
+    grid-column: 33 / span 2;
+}
   
-  .accidentalsContainer button.A {
-    grid-column: 37 / span 1;
-  }
+.accidentalsContainer button.A {
+    grid-column: 38 / span 1;
+}
 
-  .naturalsContainer {
-    width: 526px;
+.naturalsContainer {
+    width: 458px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    height: 300px;
+    height: 200px;
     margin: 0 auto;
-    margin-top: 33px;
-    outline: 10px solid $bonusAccentColor;
-  }
+    outline: 15px solid $accentColor1;
+}
   
-  .naturalsContainer button {
+.naturalsContainer button {
     background: $accentColor2;
     border: 1px solid $primaryColor;
     border-radius: 0 0 6px 6px;
-  }
+}
   
-  button {
-        cursor: pointer;
-  }
+button {
+    cursor: pointer;
+}
   
-  button:active, button:focus {
-      border: 0;
-      outline: rgba(225, 225, 225, 0);
-    }
+button:active, button:focus {
+    border: 0;
+    outline: rgba(225, 225, 225, 0);
+}
   
-  .naturalsContainer p {
+.naturalsContainer p {
     font-size: 1.75em;
-        top: 100px;
-      position: relative;
+    top: 100px;
+    position: relative;
     text-shadow: 0 1px 1px rgba(255, 255, 255, .9), 0 -1px 1px rgba(0, 0, 0, .1);
     color: #1b1b1e;
-  }
+}
 
-  .resetButton {
-      align-self: end;
-      margin: 25px;
-      background-color: $bonusAccentColor;
-      border: 2px solid $accentColor1;
-  }
+.resetButton {
+    align-self: end;
+    margin: 25px;
+    background-color: $bonusAccentColor;
+    border: 2px solid $accentColor1;
+}
 
-  .resetButton:active,
-  .resetButton:focus {
-      background-color: $bonusAccentColor;
-      border: 1px solid $accentColor1;
-  }
+.resetButton:active,
+.resetButton:focus {
+    background-color: $bonusAccentColor;
+    border: 1px solid $accentColor1;
+}

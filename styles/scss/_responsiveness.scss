@@ -1,197 +1,224 @@
 @media (max-width: 1300px) {
-    body h1 {
-      font-size: 4rem;
-    }
+    
+body h1 {
+    font-size: 4rem;
+}
 
-    .checkboxContainer {
-    margin-left: 10px;
-    margin-top: -25px;
-    height: 440px;
-  }
-  
-    .gifContainer {
-        outline: 20px solid $secondaryColor;
-        margin-right: 10px;
-    }
-
-    .checkbox {
-      margin: 15px;
-    }
+.checkbox {
+    font-size: 16px;
+    margin: 15px;
+}
 }
 
 @media (max-width: 1000px) {
 
-  main {
+main {
     margin-top: -25px;
-  }
+}
   
-  .checkbox {
-      margin: 15px;
-  }
-
-  .checkboxContainer {
-      margin-left: 5px;
-      height: 420px;
-      border-radius: 0;
-  }
-
-  .gifContainer {
-    outline: 10px solid $secondaryColor;
-    margin-top: -15px;
-    margin-right: 5px;
-  }
+.checkbox {
+    margin: 15px;
+}
 }
 
 @media (max-width:700px) {
 
-    .wrapper {
-        width: 390px;
-    }
-
-    .monitorAndMixer {
-        flex-direction: column;
-    }
-
-    body h1 {
-        margin-left: 20px;
-        margin-bottom: 3px;
-        margin-top: 10px;
-        font-size: 3rem;
-    }
-
-    .gifContainer {
-        margin: 0 auto;
-    }
-
-    .checkboxContainer {
-        margin: 0 auto;
-        width: 390px;
-        height: 310px;
-        margin-top: 10px;
-    }
-
-    .checkbox {
-        margin: 10px;
-    }
-
-
-    .naturalsContainer {
-        width: 380px;
-        height: 200px;
-        margin-top: 6px;
-        outline: 5px solid #A3320B;
-    }
-
-    .keyboardContainer {
-        height: 230px;
-    }
-
-    .accidentalsContainer {
-        width: 510px;
-        height: 60%;
-        margin-top: 100px;
-    }
-
-    .accidentalsContainer {
-      width: 405px;
-    }  
-
-    .accidentalsContainer button.G {
-        grid-column: 32 / span 2;
-    }  
+.wrapper {
+    width: 390px;
 }
 
+.monitorAndMixer {
+    flex-direction: column;
+}
 
-@media (max-width: 480px) {
+body h1 {
+    margin-left: 20px;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    font-size: 3rem;
+}
 
-    .wrapper {
-        width: 400px;
-    }
+.gifContainer {
+    margin: 0 auto;
+    outline: 10px solid $accentColor1;
+}
 
-    .checkboxContainer {
-        width: 400px;
-        height: 262px;
-    }
+.checkboxContainer {
+    margin: 0 auto;
+    width: 372px;
+    height: 310px;
+    margin-top: 20px;
+    outline: 10px solid black;
+}
 
-    .checkbox > input {
-        height: 30px;
-        width: 30px;
-    }
+.checkbox {
+    margin: 10px;
+}
 
-    .naturalsContainer {
-        width: 390px;
-    }
+.naturalsContainer {
+    width: 370px;
+    height: 200px;
+    margin-top: 6px;
+    outline: 10px solid $accentColor1;
+}
 
-    .accidentalsContainer {
-        width: 415px;
-    }
+.keyboardContainer {
+    height: 230px;
+    padding-top: 5px;
+}
+
+.accidentalsContainer {
+    width: 395px;
+    height: 60%;
+    margin-top: 100px;
+}
+
+.accidentalsContainer {
+    width: 405px;
+}  
+
+.accidentalsContainer button.C {
+    grid-column: 7 / span 2;
+}
+
+.accidentalsContainer button.D {
+    grid-column: 13 / span 3;
+}
+
+.accidentalsContainer button.A {
+    grid-column: 37 / span 1;
+}
+
+.accidentalsContainer button.G {
+    grid-column: 32 / span 2;
+}
+
+.instructions p {
+    border: 10px solid black;
+    font-size: 16px;
+    width: 390px;
+}
+
+.credits p {
+    width: 390px;
+}
+
 }
 
 @media (max-width: 420px) {
 
-    .wrapper {
-        width: 340px;
-    }
+.wrapper {
+    width: 340px;
+}
 
-    body h1 {
-        font-size: 2.5rem;
-        margin-left: 0;
-        text-align: center;
-    }
-    .checkbox {
-        margin: 5px;
-        font-size: 18px;
-    }
-
-    .checkboxContainer {
-        width: 320px;
-        justify-content: flex-start;
-    }
-
-    .baseMoods {
-        padding-top: 5px;
-    }
-
-    .naturalsContainer {
-      width: 320px;
-    }
-    .accidentalsContainer {
-      width: 348px;
-    }
+body h1 {
+    font-size: 2.5rem;
+    margin-left: 0;
+    text-align: center;
+}
     
-    .accidentalsContainer button.G {
-        grid-column: 32 / span 2;
-    }
+.checkbox {
+    margin: 5px;
+    font-size: 18px;
+}
+
+.checkbox > input {
+    height: 30px;
+    width: 30px;
+}
+
+.checkboxContainer {
+    width: 320px;
+    justify-content: flex-start;
+}
+
+.baseMoods {
+    padding-top: 5px;
+}
+
+.naturalsContainer {
+    width: 320px;
+}
+    
+.accidentalsContainer {
+    width: 348px;
+}
+    
+.accidentalsContainer button.G {
+    grid-column: 33 / span 2;
+}
  
-    .accidentalsContainer button.D {
+.accidentalsContainer button.D {
     grid-column: 14 / span 3;
-  }
+}
   
-    .accidentalsContainer button.C {
+.accidentalsContainer button.C {
     grid-column: 7 / span 2;
-  }
-  
+} 
+
+.accidentalsContainer button.A {
+    grid-column: 38 / span 1;
+}
+
+.instructions p {
+    width: 340px;
+}
+
+.credits p {
+    width: 340px;
+}
+
 }
 
 @media (max-width: 349px) {
-    .wrapper {
-        width: 320px;
-    }
-
-    .gifContainer {
-        outline: 10px solid #07004D;
-        outline: 3px solid #07004D;
-        }
-
-        .naturalsContainer {
-            width: 300px;
-        }
-
-        .accidentalsContainer {
-            width: 327px;
-        }
-
-        .accidentalsContainer button {
-            width: 35px;
-        }
+    
+.wrapper {
+    width: 320px;
 }
+
+.gifContainer {
+    outline: 5px solid $accentColor1;
+}
+
+.checkboxContainer {
+    width: 310px;
+    outline: 5px solid black;
+}
+
+.naturalsContainer {
+    width: 310px;
+    margin-top: 1px;
+    outline: 5px solid $accentColor1;
+}
+
+.instructions p {
+    border: 5px solid black;
+    font-size: 14px;
+    width: 320px;
+}
+
+.credits p {
+    width: 320px;
+}
+
+.accidentalsContainer button.C {
+    grid-column: 6 / span 2;
+}
+
+.accidentalsContainer button.D {
+    grid-column: 13 / span 3;
+}
+    
+.accidentalsContainer button.G {
+    grid-column: 31 / span 2;
+}
+    
+.accidentalsContainer button.A {
+    grid-column: 36 / span 1;
+}
+    
+.accidentalsContainer button.F {
+    grid-column: 24 / span 2;
+}
+}
+    
