@@ -1,30 +1,52 @@
 //Credit to the https://codepen.io/clkent/pen/dQwGqj
 //Piano key project by Chelsea Kent, for our use of the keyboard template
 .gifContainer {
-    margin: auto;
+    margin: 0;
+    margin-right: 15px;
+    margin-left: 30px;
+    padding: 0;
+    margin-top: -5px;
     outline: 30px solid $secondaryColor;
     background: black;
 }
 
-.keyboard-container {
-    width: auto;
-    height: 300px;
-    margin: 0 auto;
-    background-image: url(../assets/graphite.jpg);
-    background-repeat: repeat;
-  }
+.baseMoods {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.extraFunContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+  padding-left: 5px;
+}
+
+.extraSadContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+  padding-left: 5px;
+}
+
+.keyboardContainer {
+  height: 325px;
+  background-image: url(../assets/graphite.jpg);
+  background-repeat: repeat;
+  margin-top: 21px;
+}
   
-  .accidentals-container {
+  .accidentalsContainer {
     width: 526px;
     display: grid;
     grid-template-columns: repeat(42, 1fr);
-      height: 66%;
+      height: 60%;
     justify-items: center;
-    margin: auto;
-    padding-bottom: 2%;
+    padding-bottom: 2%;   
+    margin: 0 auto;
   }
   
-  .accidentals-container button {
+  .accidentalsContainer button {
     width: 45px;
       background: $primaryColor;
       border: 1px solid $accentColor2;
@@ -37,37 +59,37 @@
   }
   
   
-  .accidentals-container button.C {
+  .accidentalsContainer button.C {
     grid-column: 6 / span 2;
   }
   
-  .accidentals-container button.D {
+  .accidentalsContainer button.D {
     grid-column: 12 / span 3;
   }
   
-  .accidentals-container button.F {
+  .accidentalsContainer button.F {
     grid-column: 25 / span 2;
   }
   
-  .accidentals-container button.G {
+  .accidentalsContainer button.G {
     grid-column: 31 / span 2;
   }
   
-  .accidentals-container button.A {
+  .accidentalsContainer button.A {
     grid-column: 37 / span 1;
   }
-  
-  
-  .naturals-container {
+
+  .naturalsContainer {
     width: 526px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     height: 300px;
-    margin: auto;
-    padding-bottom: 2%;
+    margin: 0 auto;
+    margin-top: 33px;
+    outline: 10px solid $bonusAccentColor;
   }
   
-  .naturals-container button {
+  .naturalsContainer button {
     background: $accentColor2;
     border: 1px solid $primaryColor;
     border-radius: 0 0 6px 6px;
@@ -82,7 +104,7 @@
       outline: rgba(225, 225, 225, 0);
     }
   
-  .naturals-container p {
+  .naturalsContainer p {
     font-size: 1.75em;
         top: 100px;
       position: relative;

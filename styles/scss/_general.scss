@@ -3,17 +3,18 @@ html {
     font-size: 62.5%;
 }
 
-.wrapper {
-    max-width: 1600px;
-    width: 90%;
-    margin: 0 auto;
-}
-
 h1 {
     font-family: $primaryFont;
-    font-size: 6rem;
+    font-size: 4rem;
+}
+
+main h1 {
+    padding-bottom: 10px;
 }
 
 .hidden {
     display: none;
+
 }
+
+
