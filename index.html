@@ -21,101 +21,97 @@
     <main class="wrapper">
         <h1>Penfield Mood Organ</h1>
 
+
         <section class="monitorAndMixer">
 
-            <div class="gifContainer" style="width: 400px; height: 400px; display: flex;">
-                <div style="width:100%;height:0;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="400px" height="400px" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+            <div class="gifContainer" style="width: 300px; height: 400px; display: flex;">
+                <div style="width:100%;height:0;padding-bottom:20%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="300px" height="400px" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
             </div>
             
             <div class="checkboxContainer">
-                <label for="happy" class="checkbox">
-                    <input type="checkbox" value="happy" name="happy">happy</input>
-                    
-                </label>
-                
-                <label for="sad" class="checkbox">
-                    <input type="checkbox" value="sad" name="sad">sad</input>
-                    
-                </label>
-                
-                <label for="excited" class="checkbox">
-                    <input type="checkbox" value="excited" name="excited">excited</input>
-                    
-                </label>
-                
-                <label for="cheerful" class="checkbox" id="checkbox">
-                    <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
-                </label>
-                
-                <label for="gloomy" class="checkbox">
-                    <input type="checkbox" value="gloomy" name="gloomy">gloomy</input>
-                </label>
-                
-                <label for="humorous" class="checkbox">
-                    <input type="checkbox" value="humorous" name="humorous">humorous</input>
-                </label>
-                
-                <label for="melancholy" class="checkbox">
-                    <input type="checkbox" value="melancholy" name="melancholy">melancholy</input>
-                </label>
-                
-                <label for="whimsical" class="checkbox">
-                    <input type="checkbox" value="whimsical" name="whimsical">whimsical</input>
-                </label>
-                
-                <label for="romantic" class="checkbox">
-                    <input type="checkbox" value="romantic" name="romantic">romantic</input>
-                </label>
-                
-                <label for="mysterious" class="checkbox">
-                    <input type="checkbox" value="mysterious" name="mysterious">mysterious</input>
-                </label>
-                
-                <label for="ominous" class="checkbox">
-                    <input type="checkbox" value="ominous" name="ominous">ominous</input>  
-                </label>
-                
-                <label for="calm" class="checkbox">
-                    <input type="checkbox" value="calm" name="calm">calm</input>
-                </label>
-                
-                <label for="lighthearted" class="checkbox">
-                    <input type="checkbox" value="lighthearted" name="lighthearted">lighthearted</input>
-                </label>
-                
-                <label for="hopeful" class="checkbox">
-                    <input type="checkbox" value="hopeful" name="hopeful">hopeful</input>
-                </label>
-                
-                <label for="fearful" class="checkbox">
-                    <input type="checkbox" value="fearful" name="fearful">fearful</input>
-                </label>
-                
-                <label for="tense" class="checkbox">
-                    <input type="checkbox" value="tense" name="tense">tense</input>
-                </label>
-                
-                <label for="lonely" class="checkbox">
-                    <input type="checkbox" value="lonely" name="lonely">lonely</input>
-                </label>
-                
-                <button class="resetButton" onclick="reset()"><p>Reset</p></button>
+
+                <div class="baseMoods">
+                    <label for="happy" class="checkbox">
+                        <input type="checkbox" value="happy" name="happy" class="happy">happy</input>
+                    </label>
+                    <label for="sad" class="checkbox">
+                        <input type="checkbox" value="sad" name="sad" class="sad">sad</input>
+                    </label>
+
+                    <button class="resetButton"><p>Reset</p></button>
+                </div>
+
+                <div class="happyMoods hidden">
+                    <div class="extraFunContainer">
+
+                        <label for="excited" class="checkbox">
+                            <input type="checkbox" value="excited" name="excited">excited</input>    
+                        </label>
+                        <label for="cheerful" class="checkbox" id="checkbox">
+                            <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
+                        </label>
+                        <label for="humorous" class="checkbox">
+                            <input type="checkbox" value="humorous" name="humorous">humorous</input>
+                        </label>
+                        <label for="whimsical" class="checkbox">
+                            <input type="checkbox" value="whimsical" name="whimsical">whimsical</input>
+                        </label>               
+                        <label for="romantic" class="checkbox">
+                            <input type="checkbox" value="romantic" name="romantic">romantic</label>
+                        </label>
+                        <label for="calm" class="checkbox">
+                            <input type="checkbox" value="calm" name="calm">calm</input>
+                        </label>
+                        <label for="lighthearted" class="checkbox">
+                            <input type="checkbox" value="lighthearted" name="lighthearted">lighthearted</input>
+                        </label>
+                        <label for="hopeful" class="checkbox">
+                            <input type="checkbox" value="hopeful" name="hopeful">hopeful</input>
+                        </label>                
+                    </div>
+                </div>
+            
+                <div class="sadMoods hidden">
+                    <div class="extraSadContainer">
+                        <label for="gloomy" class="checkbox">
+                            <input type="checkbox" value="gloomy" name="gloomy">gloomy</input>
+                        </label>
+                        <label for="ominous" class="checkbox">
+                            <input type="checkbox" value="ominous" name="ominous">ominous</input>  
+                        </label>
+                        <label for="fearful" class="checkbox">
+                            <input type="checkbox" value="fearful" name="fearful">fearful</input>
+                        </label>
+                        <label for="tense" class="checkbox">
+                            <input type="checkbox" value="tense" name="tense">tense</input>
+                        </label>
+                        <label for="lonely" class="checkbox">
+                            <input type="checkbox" value="lonely" name="lonely">lonely</input>
+                        </label>
+                        <label for="melancholy" class="checkbox">
+                            <input type="checkbox" value="melancholy" name="melancholy">melancholy</input>
+                        </label>
+                        <label for="mysterious" class="checkbox">
+                            <input type="checkbox" value="mysterious" name="mysterious">mysterious</input>
+                        </label>
+                    </div>
+                </div>    
             </div>
         </section>
-        
-        
+ 
     </main>
-            <div class="keyboard-container wrapper">
-            <div class="naturals-container">
-              <button class="organKey" onclick="activate()"></button>
-              <button class="organKey" onclick="activate()"></button>
-              <button class="organKey" onclick="activate()"></button>
-              <button class="organKey" onclick="activate()"></button>
-              <button class="organKey" onclick="activate()"></button>
-              <button class="organKey" onclick="activate()"></button>
-              <button class="organKey" onclick="activate()"></button>
+            <div class="keyboardContainer wrapper">
+            <div class="naturalsContainer">
+              <button class="organKey"></button>
+              <button class="organKey"></button>
+              <button class="organKey"></button>
+              <button class="organKey"></button>
+              <button class="organKey"></button>
+              <button class="organKey"></button>
+              <button class="organKey" ></button>
             </div>
-            <div class="accidentals-container">
+            <div class="accidentalsContainer">
               <button class="organKey, C" onclick="activate()"></button>
               <button class="organKey, D" onclick="activate()"></button>
               <button class="organKey, F" onclick="activate()"></button>
@@ -123,11 +119,8 @@
               <button class="organKey, A" onclick="activate()"></button>
             </div>
           </div>
-        
-
 
         <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
-
 
     <script src="scripts.js"></script>
     <audio src="./assets/bzzz.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>

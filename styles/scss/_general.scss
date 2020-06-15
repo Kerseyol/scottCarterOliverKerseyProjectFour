@@ -3,13 +3,25 @@ html {
     font-size: 62.5%;
 }
 
-.wrapper {
-    max-width: 1600px;
-    width: 90%;
-    margin: 0 auto;
-}
-
 h1 {
     font-family: $primaryFont;
-    font-size: 6rem;
+    font-size: 4rem;
+}
+
+main h1 {
+    padding-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visually-hidden { 
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
 }
