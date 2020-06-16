@@ -75,7 +75,7 @@ moodApp.activate = function (){
         audTag[2].play();
         
         setTimeout(moodApp.switchReturn, 5000);
-        setTimeout( function(){$('.organKey').attr("disabled", false);}, 5000);
+        setTimeout( function(){$('.keyboardContainer button').attr("disabled", false);}, 5000);
         })
         
     }
