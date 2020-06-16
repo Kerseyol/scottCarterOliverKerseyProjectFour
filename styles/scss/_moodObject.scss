@@ -114,6 +114,8 @@ button:active, button:focus {
 .resetButton {
     align-self: end;
     margin: 25px;
+    margin-right: 10px;
+    margin-left: 5px;
     background-color: $bonusAccentColor;
     border: 2px solid $accentColor1;
 }
