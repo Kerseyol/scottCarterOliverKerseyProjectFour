@@ -392,6 +392,8 @@ button:active, button:focus {
       -ms-grid-row-align: end;
       align-self: end;
   margin: 25px;
+  margin-right: 10px;
+  margin-left: 5px;
   background-color: #A3320B;
   border: 2px solid #EC9A29;
 }

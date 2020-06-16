@@ -13,8 +13,7 @@ moodApp.checkboxValue = function (){
         if (e.target.className === 'happy') {
             $('.happyMoods').toggleClass('hidden');
         } else if (e.target.className === 'sad'){
-            $('.sadMoods').toggleClass('hidden');
-            
+            $('.sadMoods').toggleClass('hidden');  
         }
 
         if ($('.happyMoods').css('display') == 'none' && $('.sadMoods').css('display') == 'none'){
@@ -81,28 +80,15 @@ moodApp.activate = function (){
         
     }
 
-    
-
-
-
-
-moodApp.switchReturn = function(){
-    $('.gifContainer').empty(),
-
-    ($('.gifContainer').append(`<div style="width:300px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
-
-    $('.happyMoods').addClass('hidden');
-    $('.sadMoods').addClass('hidden');
-    $('.happy').removeAttr("disabled");
-    $('.sad').removeAttr("disabled");
-    $('input[type=checkbox]').each(function() { 
-        this.checked = false; 
-        finalSelection.primaryMood = '';
-        finalSelection.secondaryMood = '';
-    }); 
-    
-   
-    audTag[0].play(); 
+moodApp.volume = function() {
+    $('.audio').prop('volume', 0.2);
+    $('.volume').change(function(){
+        if (this.checked){
+            $('.audio').prop('volume', 0);
+        } else {
+            $('.audio').prop('volume', 0.2);
+        }
+    })
 }
 
 moodApp.reset = function(){
@@ -117,6 +103,16 @@ moodApp.reset = function(){
     }); 
 }
 
+moodApp.switchReturn = function(){
+    $('.gifContainer').empty(),
+
+    ($('.gifContainer').append(`<div style="width:300px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
+
+    moodApp.reset();
+    audTag[0].play(); 
+}
+
+
 moodApp.resetButton = function(){
     $('.resetButton').on('click', function(){
         audTag[3].play();
@@ -127,6 +123,7 @@ moodApp.resetButton = function(){
 moodApp.init = () => {
     moodApp.checkboxValue();
     moodApp.activate();
+    moodApp.volume();
     moodApp.switchReturn();
     moodApp.resetButton();
 }
