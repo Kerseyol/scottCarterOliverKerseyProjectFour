@@ -28,7 +28,7 @@ moodApp.checkboxValue = function (){
         }
 
 
-        if (clicks === 1){
+        if (clicks % 2 === 1){
             if(this.checked) {
                 audTag[1].currentTime = 0;
                 audTag[1].play();
@@ -38,7 +38,7 @@ moodApp.checkboxValue = function (){
                 audTag[1].play();
                 delete finalSelection.primaryMood;
             }
-        } else if (clicks > 1) {
+        } else if (clicks % 2 === 0) {
             if(this.checked) {
                 audTag[1].currentTime = 0;
                 audTag[1].play();
@@ -57,9 +57,9 @@ moodApp.checkboxValue = function (){
 }
 
 moodApp.activate = function (){
-    $('.organKey').on('click', function(){
+    $('.keyboardContainer button').on('click', function(){
         $('.gifContainer').empty();
-        $('.organKey').attr("disabled", true);
+        $('.keyboardContainer button').attr("disabled", true);
         $.ajax({
             url:'https://api.giphy.com/v1/gifs/random',
             method: 'GET',
