@@ -73,6 +73,10 @@ moodApp.activate = function (){
                 $('.gifContainer').append(`<div style="width:300px;height:400px;padding-bottom:0%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`)
         })
         audTag[2].play();
+
+        $('html, body').animate({
+            scrollTop: $('main').offset().top
+        }, 1000);
         
         setTimeout(moodApp.switchReturn, 5000);
         setTimeout( function(){$('.keyboardContainer button').attr("disabled", false);}, 5000);
