@@ -1,0 +1,97 @@
+body {
+    background-image: url(../assets/bladerunnerBackground.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body h1 {
+    text-align: center;
+    color: $accentColor1;
+    padding: 0;
+    margin-top: -15px;
+}
+
+main {
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+    margin-top: 15px;
+}
+
+.monitorAndMixer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3%;
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+}
+
+.checkboxContainer {
+    background-image: url(.././assets/mixerBack.jpg);
+    height: 161px;
+    width: 500px;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // margin: 0;
+    margin-top: 15px;
+    padding-bottom: 0;
+    border-radius: 10px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+    font-size: 20px;
+    color: $accentColor1;
+}
+
+.checkbox > input {
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: url(../assets/dials.jpg);
+    background-size: cover;
+    transition: all 1s;
+}
+
+.checkbox > input:checked {
+    transform: rotate(120deg);
+}
+
+.monitorAndMixer {
+    margin-bottom: -44px;
+}
+  
+.wrapper {
+    width: 75%;
+}
+  
+.gifContainer {
+    margin-top: -5px;
+}
+  
+.wrapper {
+    max-width: 1600px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.credits p {
+    font-size: 14px;
+    color: $accentColor1;
+    text-align: center;
+    background-image: url(../assets/graphite.jpg);
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}

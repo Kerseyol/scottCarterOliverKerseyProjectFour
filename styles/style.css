@@ -235,6 +235,91 @@ html {
   overflow: hidden;
 }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 800px;
+  max-width: 80%;
+}
+
+.modal.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+  font-size: 2.25rem;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.instructions {
+  margin: 10px 15px;
+  padding: 0;
+  border: 2px solid black;
+}
+
+.instructions:active,
+.instructions:focus {
+  padding: 0;
+  margin: 10px 15px;
+  border: 2px solid black;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Source Code Pro", monospace;
@@ -254,7 +339,6 @@ main h1 {
 
 .gifContainer {
   margin: 0;
-  margin-right: 15px;
   padding: 0;
   margin-top: -5px;
   outline: 15px solid #EC9A29;
@@ -268,6 +352,11 @@ main h1 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-bottom: -5px;
+}
+
+.sadMoods {
+  margin-top: 0;
 }
 
 .extraFunContainer {
@@ -276,8 +365,16 @@ main h1 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-bottom: 30px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+.extraFunContainer label,
+.extraFunContainer input {
+  margin-top: 0;
 }
 
 .extraSadContainer {
@@ -286,16 +383,19 @@ main h1 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-bottom: 30px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-bottom: 10px;
   padding-left: 5px;
 }
 
 .keyboardContainer {
-  height: 242px;
+  height: 307px;
   background-image: url(../assets/graphite.jpg);
   background-repeat: repeat;
   margin-top: 21px;
-  padding-top: 15px;
+  padding-top: 50px;
 }
 
 .accidentalsContainer {
@@ -308,11 +408,12 @@ main h1 {
   justify-items: center;
   padding-bottom: 2%;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 140px;
 }
 
 .accidentalsContainer button {
-  width: 45px;
+  width: 41px;
+  height: 94px;
   background: #141301;
   border: 1px solid #EC9A29;
   border-radius: 0 0 4px 4px;
@@ -359,13 +460,13 @@ main h1 {
   display: grid;
   -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr);
-  height: 200px;
+  height: 160px;
   margin: 0 auto;
   outline: 15px solid #EC9A29;
 }
 
 .naturalsContainer button {
-  background: #878E88;
+  background-image: url(../assets/plastic.jpg);
   border: 1px solid #141301;
   border-radius: 0 0 6px 6px;
 }
@@ -401,7 +502,7 @@ button:active, button:focus {
 .resetButton:active,
 .resetButton:focus {
   background-color: #A3320B;
-  border: 1px solid #EC9A29;
+  border: 2px solid #EC9A29;
 }
 
 body {
@@ -415,18 +516,27 @@ body {
 body h1 {
   text-align: center;
   color: #EC9A29;
-  padding: 15px 0;
+  padding: 0;
+  margin-top: -15px;
 }
 
 main {
   background-image: url(../assets/graphite.jpg);
   background-repeat: repeat;
+  margin-top: 15px;
 }
 
 .monitorAndMixer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -437,14 +547,12 @@ main {
 
 .checkboxContainer {
   background-image: url(.././assets/mixerBack.jpg);
-  height: 402px;
-  width: 301px;
+  height: 161px;
+  width: 500px;
   margin-right: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -452,11 +560,9 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0;
-  margin-top: -6px;
-  margin-left: 15px;
+  margin-top: 15px;
   padding-bottom: 0;
-  outline: 15px solid black;
+  border-radius: 10px;
 }
 
 .checkbox {
@@ -473,7 +579,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  margin: 11px;
+  margin-top: 15px;
   font-size: 20px;
   color: #EC9A29;
 }
@@ -482,8 +588,8 @@ main {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   background: url(../assets/dials.jpg);
   background-size: cover;
@@ -514,21 +620,6 @@ main {
   margin: 0 auto;
 }
 
-.instructions {
-  background-image: url(../assets/graphite.jpg);
-  margin-top: 38px;
-}
-
-.instructions p {
-  background-image: url(../assets/mixerBack.jpg);
-  font-family: "Source Code Pro", monospace;
-  border: 15px solid black;
-  font-size: 18px;
-  color: #EC9A29;
-  width: 661px;
-  margin: 0 auto;
-}
-
 .credits p {
   font-size: 14px;
   color: #EC9A29;
@@ -537,212 +628,4 @@ main {
   width: 700px;
   margin: 0 auto;
   padding-bottom: 10px;
-}
-
-@media (max-width: 1300px) {
-  body h1 {
-    font-size: 4rem;
-  }
-  .checkbox {
-    font-size: 16px;
-    margin: 15px;
-  }
-}
-
-@media (max-width: 1000px) {
-  main {
-    margin-top: -25px;
-  }
-  .checkbox {
-    margin: 15px;
-  }
-}
-
-@media (max-width: 700px) {
-  .wrapper {
-    width: 390px;
-  }
-  .monitorAndMixer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  body h1 {
-    margin-left: 20px;
-    margin-bottom: 3px;
-    margin-top: 10px;
-    font-size: 3rem;
-  }
-  .gifContainer {
-    margin: 0 auto;
-    outline: 10px solid #EC9A29;
-  }
-  .checkboxContainer {
-    margin: 0 auto;
-    width: 372px;
-    height: 310px;
-    margin-top: 20px;
-    outline: 10px solid black;
-  }
-  .checkbox {
-    margin: 10px;
-  }
-  .naturalsContainer {
-    width: 370px;
-    height: 200px;
-    margin-top: 6px;
-    outline: 10px solid #EC9A29;
-  }
-  .keyboardContainer {
-    height: 230px;
-    padding-top: 5px;
-  }
-  .accidentalsContainer {
-    width: 395px;
-    height: 60%;
-    margin-top: 100px;
-  }
-  .accidentalsContainer {
-    width: 405px;
-  }
-  .accidentalsContainer button.C {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 2;
-    grid-column: 7 / span 2;
-  }
-  .accidentalsContainer button.D {
-    -ms-grid-column: 13;
-    -ms-grid-column-span: 3;
-    grid-column: 13 / span 3;
-  }
-  .accidentalsContainer button.A {
-    -ms-grid-column: 37;
-    -ms-grid-column-span: 1;
-    grid-column: 37 / span 1;
-  }
-  .accidentalsContainer button.G {
-    -ms-grid-column: 32;
-    -ms-grid-column-span: 2;
-    grid-column: 32 / span 2;
-  }
-  .instructions p {
-    border: 10px solid black;
-    font-size: 16px;
-    width: 390px;
-  }
-  .credits p {
-    width: 390px;
-  }
-}
-
-@media (max-width: 420px) {
-  .wrapper {
-    width: 340px;
-  }
-  body h1 {
-    font-size: 2.5rem;
-    margin-left: 0;
-    text-align: center;
-  }
-  .checkbox {
-    margin: 5px;
-    font-size: 18px;
-  }
-  .checkbox > input {
-    height: 30px;
-    width: 30px;
-  }
-  .checkboxContainer {
-    width: 320px;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  .baseMoods {
-    padding-top: 5px;
-  }
-  .naturalsContainer {
-    width: 320px;
-  }
-  .accidentalsContainer {
-    width: 348px;
-  }
-  .accidentalsContainer button.G {
-    -ms-grid-column: 33;
-    -ms-grid-column-span: 2;
-    grid-column: 33 / span 2;
-  }
-  .accidentalsContainer button.D {
-    -ms-grid-column: 14;
-    -ms-grid-column-span: 3;
-    grid-column: 14 / span 3;
-  }
-  .accidentalsContainer button.C {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 2;
-    grid-column: 7 / span 2;
-  }
-  .accidentalsContainer button.A {
-    -ms-grid-column: 38;
-    -ms-grid-column-span: 1;
-    grid-column: 38 / span 1;
-  }
-  .instructions p {
-    width: 340px;
-  }
-  .credits p {
-    width: 340px;
-  }
-}
-
-@media (max-width: 349px) {
-  .wrapper {
-    width: 320px;
-  }
-  .gifContainer {
-    outline: 5px solid #EC9A29;
-  }
-  .checkboxContainer {
-    width: 310px;
-    outline: 5px solid black;
-  }
-  .naturalsContainer {
-    width: 310px;
-    margin-top: 1px;
-    outline: 5px solid #EC9A29;
-  }
-  .instructions p {
-    border: 5px solid black;
-    font-size: 14px;
-    width: 320px;
-  }
-  .credits p {
-    width: 320px;
-  }
-  .accidentalsContainer button.C {
-    -ms-grid-column: 6;
-    -ms-grid-column-span: 2;
-    grid-column: 6 / span 2;
-  }
-  .accidentalsContainer button.D {
-    -ms-grid-column: 13;
-    -ms-grid-column-span: 3;
-    grid-column: 13 / span 3;
-  }
-  .accidentalsContainer button.G {
-    -ms-grid-column: 31;
-    -ms-grid-column-span: 2;
-    grid-column: 31 / span 2;
-  }
-  .accidentalsContainer button.A {
-    -ms-grid-column: 36;
-    -ms-grid-column-span: 1;
-    grid-column: 36 / span 1;
-  }
-  .accidentalsContainer button.F {
-    -ms-grid-column: 24;
-    -ms-grid-column-span: 2;
-    grid-column: 24 / span 2;
-  }
 }

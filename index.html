@@ -14,8 +14,9 @@
 <body>
     <header class="wrapper">  
     </header>
-    
+
     <main class="wrapper">
+        <button data-modal-target="#modal" class="instructions">Open Modal</button>
         <h1>Penfield Mood Organ</h1>
 
         <section class="monitorAndMixer">
@@ -41,7 +42,9 @@
                         </label>   
                     </div>
                     <button class="resetButton"><p>Reset</p></button>
+                    
                 </div>
+                
 
                 <div class="happyMoods hidden">
                     <div class="extraFunContainer">
@@ -52,21 +55,21 @@
                         <label for="cheerful" class="checkbox" id="checkbox">
                             <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
                         </label>
-                        <label for="humorous" class="checkbox">
+                        <!-- <label for="humorous" class="checkbox">
                             <input type="checkbox" value="humorous" name="humorous">humorous</input>
-                        </label>
-                        <label for="whimsical" class="checkbox">
+                        </label> -->
+                        <!-- <label for="whimsical" class="checkbox">
                             <input type="checkbox" value="whimsical" name="whimsical">whimsical</input>
-                        </label>               
+                        </label>                -->
                         <label for="romantic" class="checkbox">
                             <input type="checkbox" value="romantic" name="romantic">romantic</label>
                         </label>
                         <label for="calm" class="checkbox">
                             <input type="checkbox" value="calm" name="calm">calm</input>
                         </label>
-                        <label for="hopeful" class="checkbox">
+                        <!-- <label for="hopeful" class="checkbox">
                             <input type="checkbox" value="hopeful" name="hopeful">hopeful</input>
-                        </label>                
+                        </label>                 -->
                     </div>
                 </div>
             
@@ -75,11 +78,11 @@
                         <label for="gloomy" class="checkbox">
                             <input type="checkbox" value="gloomy" name="gloomy">gloomy</input>
                         </label>
-                        <label for="ominous" class="checkbox">
+                        <!-- <label for="ominous" class="checkbox">
                             <input type="checkbox" value="ominous" name="ominous">ominous</input>  
-                        </label>
-                        <label for="fearful" class="checkbox">
-                            <input type="checkbox" value="fearful" name="fearful">fearful</input>
+                        </label> -->
+                        <label for="fear" class="checkbox">
+                            <input type="checkbox" value="fear" name="fear">fear</input>
                         </label>
                         <label for="tense" class="checkbox">
                             <input type="checkbox" value="tense" name="tense">tense</input>
@@ -87,54 +90,61 @@
                         <label for="lonely" class="checkbox">
                             <input type="checkbox" value="lonely" name="lonely">lonely</input>
                         </label>
-                        <label for="melancholy" class="checkbox">
+                        <!-- <label for="melancholy" class="checkbox">
                             <input type="checkbox" value="melancholy" name="melancholy">melancholy</input>
-                        </label>
-                        <label for="mysterious" class="checkbox">
+                        </label> -->
+                        <!-- <label for="mysterious" class="checkbox">
                             <input type="checkbox" value="mysterious" name="mysterious">mysterious</input>
-                        </label>
+                        </label> -->
                     </div>
                 </div>    
             </div>
         </section>
- 
-
     </main>
 
-    <section class="instructions wrapper">
-        <p>turn dials to select mood, then press the keys to see how you feel...</p>
-    </section>
+    <div class="keyboardContainer wrapper">
+        <div class="naturalsContainer">
 
-            <div class="keyboardContainer wrapper">
-            <div class="naturalsContainer">
+          <button class="organKey"></button>
+          <button class="organKey"></button>
+          <button class="organKey"></button>
+          <button class="organKey"></button>
+          <button class="organKey"></button>
+          <button class="organKey"></button>
+          <button class="organKey" ></button>
+        </div>
+        <div class="accidentalsContainer">
+          <button class="organKey, C"></button>
+          <button class="organKey, D"></button>
+          <button class="organKey, F"></button>
+          <button class="organKey, G"></button>
+          <button class="organKey, A"></button>
+        </div>
+      </div>
 
-              <button class="organKey"></button>
-              <button class="organKey"></button>
-              <button class="organKey"></button>
-              <button class="organKey"></button>
-              <button class="organKey"></button>
-              <button class="organKey"></button>
-              <button class="organKey" ></button>
-            </div>
-            <div class="accidentalsContainer">
-              <button class="organKey, C"></button>
-              <button class="organKey, D"></button>
-              <button class="organKey, F"></button>
-              <button class="organKey, G"></button>
-              <button class="organKey, A"></button>
-            </div>
-          </div>
+      <section class="credits">
+          <p>Project by Scott Carter and Oliver Kersey</p>
+      </section>
 
-          <section class="credits">
-              <p>Project by Scott Carter and Oliver Kersey</p>
-          </section>
+
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Example Modal</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quidem modi aliquid non rerum laudantium debitis, vitae temporibus placeat dolore distinctio beatae earum illo corporis eveniet ut maiores incidunt. Quibusdam reprehenderit error numquam quaerat corporis pariatur aspernatur, sequi non inventore nostrum at, optio quisquam ea eligendi omnis iusto praesentium nobis laudantium itaque. Facilis illum laboriosam doloribus minus placeat. Voluptate quod incidunt expedita inventore aliquam quae placeat architecto nobis! Laudantium commodi nam deleniti unde aut ex obcaecati molestiae ea repellat praesentium.
+        </div>
+    </div>
+    <div id="overlay"></div>
 
 <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
 
-<script src="scripts.js"></script>
+<script src="./scripts.js"></script>
 <audio src="./assets/bzzz.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
 <audio src="./assets/click.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
 <audio src="./assets/synthSting.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
 <audio src="./assets/reset.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
 </body>
-</html> 
+</html>
